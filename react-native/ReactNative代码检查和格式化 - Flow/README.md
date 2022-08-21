@@ -1060,7 +1060,7 @@ MyComponent.defaultProps = {
 
 ### 上下文
 
-```react
+```jsx
 // @flow
 import React from 'react';
 
@@ -1075,7 +1075,7 @@ const Theme = React.createContext();
 </Theme.Consumer>;
 ```
 
-```react
+```jsx
 // @flow
 import React from 'react';
 
