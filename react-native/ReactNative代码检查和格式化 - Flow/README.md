@@ -26,6 +26,8 @@ React Native项目中默认包含Flow的配置文件`.flowconfig`，文件中`[v
 ^0.176.3
 ```
 
+> 如果Flow配置文件`.flowconfig`中没有包含版本信息，可在项目中`node_modules/react-native/package.json`文件查看React Native依赖的Flow版本。
+
 在项目中安装对应版本的Flow。
 
 ```shell
@@ -83,7 +85,9 @@ npm install -save-dev flow-bin@^0.176.3
 
 ## Flow基础
 
-### Primitive Types（原始类型）
+### 类型注解
+
+#### Primitive Types（原始类型）
 
 - 布尔值
 
@@ -158,7 +162,7 @@ acceptsUndefined(undefined); // Works!
 
 
 
-### Literal Types（字面类型）
+#### Literal Types（字面类型）
 
 ```javascript
 // @flow
@@ -188,7 +192,7 @@ getColor('error'); // Error!
 
 
 
-### Mixed Types（混合类型） ——避免使用
+#### Mixed Types（混合类型） ——避免使用
 
 `mixed`接受任何类型的值。
 
@@ -206,7 +210,7 @@ stringify({}); // Works!
 
 
 
-### Any Types（任意类型）——避免使用
+#### Any Types（任意类型）——避免使用
 
 `any`不使用类型检查。
 
@@ -223,7 +227,7 @@ add({}, []); // Works.
 
 
 
-### Maybe Types（可选类型）
+#### Maybe Types（可选类型）
 
 ```javascript
 // @flow
@@ -247,7 +251,7 @@ acceptsMaybeProp({}); // Error!
 
 
 
-### Variable Types（变量类型）
+#### Variable Types（变量类型）
 
 ```javascript
 // @flow
@@ -266,7 +270,7 @@ foo = '3'; // Error!
 
 
 
-### Function Types（函数类型）
+#### Function Types（函数类型）
 
 ```javascript
 // @flow
@@ -323,7 +327,7 @@ function method(): number {
 
 
 
-### Object Types（对象类型）
+#### Object Types（对象类型）
 
 ```javascript
 // @flow
@@ -377,7 +381,7 @@ let foo: {|foo: string|} = {foo: 'Hello', bar: 'World!'}; // Error!
 
 
 
-### Array Types（数组类型）
+#### Array Types（数组类型）
 
 ```javascript
 // @flow
@@ -411,7 +415,7 @@ readonlyArray.push(4); // Error!
 
 
 
-### Tuple Types（元组类型）
+#### Tuple Types（元组类型）
 
 ```javascript
 // @flow
@@ -473,7 +477,7 @@ tuple.push(3); // Error!
 
 
 
-### Type Aliases（类型别名）
+#### Type Aliases（类型别名）
 
 ```javascript
 // @flow
@@ -513,7 +517,7 @@ type AliasAlias = ObjectAlias;
 
 
 
-### Interface Types（接口类型）
+#### Interface Types（接口类型）
 
 ```javascript
 // @flow
@@ -593,7 +597,7 @@ function method2(value: Contravariant) {
 
 
 
-### Generic Types（泛型类型）
+#### Generic Types（泛型类型）
 
 - 函数泛型
 
@@ -674,7 +678,7 @@ let val: MyInterface<number, boolean, string> = {
 
 
 
-### Union Types（联合类型）
+#### Union Types（联合类型）
 
 ```javascript
 // @flow
@@ -775,7 +779,7 @@ function handleResponse(response: Response) {
 
 
 
-### Intersection Types（相交类型）
+#### Intersection Types（相交类型）
 
 ```javascript
 // @flow
@@ -900,7 +904,7 @@ method('hi'); // Error!
 
 
 
-### Typeof Types（Typeof类型）
+#### Typeof Types（Typeof类型）
 
 ```javascript
 // @flow
@@ -934,7 +938,7 @@ let arr2: typeof arr1 = [3, 2, 1]; // Works!
 
 
 
-### Module Types（模块类型）
+#### Module Types（模块类型）
 
 `exports.js`
 
@@ -959,7 +963,7 @@ import type Foo, {MyInterface, MyObject} from './exports';
 
 
 
-### Comment Types（注释类型）
+#### Comment Types（注释类型）
 
 - 类型包含注释
 
@@ -1010,11 +1014,17 @@ function method(param /*: string */) /*: number */ {
 
 
 
+### Flow配置
+
+项目中的`.flowconfig`文件是Flow的配置文件，新项目可以运行`flow init`命令生成默认的配置文件。Flow配置说明可通过[官方文档](https://flow.org/en/docs/config/)学习。
+
+
+
 ## React Native项目使用Flow
 
 ### 组件
 
-```react
+```jsx
 // @flow
 import * as React from 'react';
 import {Text} from 'react-native';
@@ -1036,7 +1046,7 @@ function MyComponent(props: Props) {
 
 - 组件参数默认值
 
-```react
+```jsx
 // @flow
 import * as React from 'react';
 import {Text} from 'react-native';
@@ -1088,7 +1098,7 @@ const Theme = React.createContext<'light' | 'dark'>('light');
 
 ### 其他
 
-事件处理、Redux和类型参考等专题请在[官网](https://flow.org/en/docs/react/)阅读学习。
+事件处理、Redux和类型参考等专题可通过[官方文档](https://flow.org/en/docs/react/)学习。
 
 
 
