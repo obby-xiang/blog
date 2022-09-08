@@ -83,6 +83,42 @@ npm install --save-dev prettier@^2.4.1
 
 
 
+## 代码编辑器集成Prettier
+
+### WebStorm集成Prettier
+
+- `Settings` | `Languages & Frameworks` | `JavaScript` | `Prettier`
+- `Prettier package`指向项目中`node_modules/prettier`目录
+- `On 'Reformat Code' action`和`On save`勾选以在格式化代码和文件保存时使用Prettier重新格式化，`Run for files`配置使用Prettierr重新格式化的文件，默认为`{**/*,*}.{js,ts,jsx,tsx}`，即项目中JavaScript、TypeScript、JSX 和 TSX文件
+
+![Prettier - WebStorm](assets/Prettier-WebStorm.png)
+
+
+
+### Visual Studio Code集成Prettier
+
+- 安装Prettier扩展[Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+![Prettier Formatter for Visual Studio Code](assets/Prettier-Formatter-for-Visual-Studio-Code.png)
+
+
+
+- 设置默认格式化程序`editor.defaultFormatter`为`Prettier - Code formatter`
+
+> 建议仅在工作区设置中修改，避免影响到其他项目。
+
+![Set editor.defaultFormatter Prettier](assets/Set-editor.defaultFormatter-Prettier.png)
+
+
+
+- 配置Prettier，参照在WebStorm中的配置
+
+> 建议仅在工作区设置中修改，避免影响到其他项目。
+
+![Prettier Visual Studio Code Settings](assets/Prettier-Visual-Studio-Code-Settings.png)
+
+
+
 ## 参考
 
 - [Docs - Prettier](https://prettier.io/docs/en/index.html)

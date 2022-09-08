@@ -45,7 +45,7 @@ npm install -save-dev flow-bin@^0.176.3
 ### WebStorm集成Flow
 
 - 配置Flow
-  - `Settings` -> `Languages & Frameworks | JavaScript`
+  - `Settings` | `Languages & Frameworks` | `JavaScript`
   - `JavaScript Language Version`列表中选择`Flow`
   - `Flow package or executable`指向项目中`node_modules/flow-bin`目录
   - `Use Flow server for`中勾选`Type checking`和`Navigation, code completion, and type hinting`以开启类型检查、类型提示和代码补充等功能
