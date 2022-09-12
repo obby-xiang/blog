@@ -1106,7 +1106,4 @@ const Theme = React.createContext<'light' | 'dark'>('light');
 
 - [Type system - Wikipedia](https://en.wikipedia.org/wiki/Type_system)
 - [Documentation - Flow](https://flow.org/)
-- [Learn how to use Flow with Create React App - Flow](https://flow.org/en/docs/tools/create-react-app/)
-- [How to pin your project to a specific version of Flow - Flow](https://flow.org/en/docs/config/version/)
-- [Flow integration for the Visual Studio Code editor - Flow](https://flow.org/en/docs/editors/vscode/)
 - [Using the flow type checker - WebStorm](https://www.jetbrains.com/help/webstorm/using-the-flow-type-checker.html)

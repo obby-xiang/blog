@@ -119,7 +119,62 @@ npm install --save-dev prettier@^2.4.1
 
 
 
+## Prettier使用
+
+### 忽略代码
+
+#### 忽略文件
+
+在项目根目录创建`.prettierignore`文件，`.prettierignore`使用[gitignore语法](https://git-scm.com/docs/gitignore)。
+
+> Prettier默认忽略版本控制系统目录（.git、.svn和.hg）和node_modules目录中的文件。
+
+```gitignore
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
+```
+
+
+
+#### JavaScript
+
+```javascript
+matrix(1, 0, 0, 0, 1, 0, 0, 0, 1);
+
+// prettier-ignore
+matrix(
+  1, 0, 0,
+  0, 1, 0,
+  0, 0, 1
+)
+```
+
+
+
+#### JSX
+
+```jsx
+<div>
+  {/* prettier-ignore */}
+  <span     ugly  format=''   />
+</div>
+```
+
+
+
+### 配置选项
+
+请查看[官方文档](https://prettier.io/docs/en/options.html)学习。
+
+
+
 ## 参考
 
 - [Docs - Prettier](https://prettier.io/docs/en/index.html)
+- [Prettier - WebStorm](https://www.jetbrains.com/help/webstorm/prettier.html)
+- [Visual Studio Code extension for Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
